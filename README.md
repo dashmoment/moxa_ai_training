@@ -12,7 +12,7 @@ The tuorial is modified from https://github.com/Hvass-Labs/TensorFlow-Tutorials
 
 The major tutorial file is [tutorial.ipynb](https://github.com/dashmoment/moxa_ai_training/blob/master/tutorial/02_CNN/tutorial.ipynb)
 
-You may need install [ipython Notebook](http://jupyter.org/)
+You may need to install [ipython Notebook](http://jupyter.org/)
 
 In this turtorial, we will show composition of CIFAR10 dataset and some preprocess for input image at first.
 
