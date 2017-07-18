@@ -8,7 +8,7 @@ it's constructed as following:
 
 In this tutorial, we are going to practice DNN to solve notMNIST dataset. This dataset is designed to look like classic MNIST dataset, while looking a little more like real data: it's a harder task, and the data is a lot less 'clean' than MNIST.
 
-There are three parts in this tutorial 
+There are three parts in this tutorial:
 
 * Download dataset and pre-processing for training and testing 
 * Construct DNN with gradient descent
@@ -37,4 +37,11 @@ Finally, we will review the training results and some parameters attributes afte
 
 ## tutorial/RNN
 
+In this tutorial, we are going to build LSTM character model. The dataset we use in this practice is Text8.
+
+There are two parts in this tutorial:
+* Create word2vector 
+* Build LSTM char-level model to generate text
+
+For more information about Text8, please reference [here](http://mattmahoney.net/dc/textdata)   
 
