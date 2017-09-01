@@ -33,11 +33,13 @@ def pre_process_image(image, training):
     # This function takes a single image as input,
     # and a boolean whether to build the training or testing graph.
     
-    if training:
+    img = image
+    
+    def if_true():
         # For training, add the following to the TensorFlow graph.
 
         # Randomly crop the input image.
-        image = tf.random_crop(image, size=[img_size_cropped, img_size_cropped, num_channels])
+        image = tf.random_crop(img, size=[img_size_cropped, img_size_cropped, num_channels])
 
         # Randomly flip the image horizontally.
         image = tf.image.random_flip_left_right(image)
@@ -56,15 +58,20 @@ def pre_process_image(image, training):
         # Limit the image pixels between [0, 1] in case of overflow.
         image = tf.minimum(image, 1.0)
         image = tf.maximum(image, 0.0)
-    else:
+	
+        return image
+    
+    def if_false():
         # For training, add the following to the TensorFlow graph.
 
         # Crop the input image around the centre so it is the same
         # size as images that are randomly cropped during training.
-        image = tf.image.resize_image_with_crop_or_pad(image,
-                                                       target_height=img_size_cropped,
+        image = tf.image.resize_image_with_crop_or_pad(img,
+                                                      target_height=img_size_cropped,
                                                        target_width=img_size_cropped)
+        return image
 
+    image = tf.cond(training, if_true, if_false)
     return image
 
 def pre_process(images, training):
