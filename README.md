@@ -45,3 +45,18 @@ There are two parts in this tutorial:
 
 For more information about Text8, please reference [here](http://mattmahoney.net/dc/textdata)   
 
+## CNN Home work solution
+There are four main module in this solution
+### train.py
+Input cifar10 dataset --> build model --> build loss function and log --> training
+### model_zoo.py
+This script includes two network: ResNet and GoogleLeNet
+You can use model ticket to build these networks by calling:
+    mz = model_zoo.build_model(#model ticket)
+    network = mz.build_model()
+### netfactory.py
+Common module for building a CNN network. 
+
+### eval.py
+The script for evaluation trained model on whole cifar10 test set
+
